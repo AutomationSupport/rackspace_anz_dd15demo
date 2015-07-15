@@ -19,7 +19,7 @@ def stub_resources
   stub_command('which sudo').and_return(true)
   stub_command('dumpe2fs /dev/xvde1').and_return(false)
   stub_command('which nginx').and_return(0)
-  stub_command("/usr/sbin/httpd -t").and_return(0)
+  stub_command('/usr/sbin/httpd -t').and_return(0)
   allow(Chef::EncryptedDataBagItem).to receive(:load).with('secrets', 'devel').and_return(f_databags('secrets', 'devel'))
   # For build domain helpers
   query = double(Chef::Search::Query)
