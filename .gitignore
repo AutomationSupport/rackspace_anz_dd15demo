@@ -9,12 +9,21 @@ pkg/
 # Berkshelf
 .vagrant
 /cookbooks
-Berksfile.lock
 
 # Bundler
-Gemfile.lock
 bin/*
 .bundle/*
 
 .kitchen/
 .kitchen.local.yml
+.kitchen.local.yml.old
+
+# chefspec
+.coverage/
+
+# chef
+.chef/
+
+encrypted_data_bag_secret
+knife.rb
+.encrypted_data_bag_secret
