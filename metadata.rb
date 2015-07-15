@@ -4,7 +4,7 @@ maintainer_email 'YOUR_EMAIL'
 license          'All rights reserved'
 description      'Installs/Configures dd15demo'
 long_description 'Installs/Configures dd15demo'
-version          '0.1.0'
+version          '0.1.1'
 
 # depends 'platformstack'
 # depends 'rackspace_sudo'
