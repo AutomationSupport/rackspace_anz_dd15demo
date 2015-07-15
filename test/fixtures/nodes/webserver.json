@@ -1,0 +1,43 @@
+{
+  "name": "webserver",
+  "chef_environment": "devel",
+  "json_class": "Chef::Node",
+  "automatic": {
+    "hostname": "vagrant.vm",
+    "os": "ubuntu",
+    "recipes": [
+      "rackspace_anz_dd15demo::default"
+    ],
+    "roles": [
+    ],
+    "tags": [
+      "webserver"
+    ],
+    "ipaddress": "10.0.0.10",
+    "network": {
+      "interfaces": {
+        "eth2": {
+          "addresses": {
+            "00:00:00:00:00:01": {
+              "family": "mac"
+            },
+            "192.168.111.112": {
+              "family": "inet",
+              "subnet": "255.255.255.0"
+            }
+          }
+        }
+      }
+    }
+  },
+  "normal": {
+  },
+  "chef_type": "node",
+  "default": {
+  },
+  "override": {
+  },
+  "run_list": [
+    "recipe[rackspace_anz_dd15demo::default]"
+  ]
+}

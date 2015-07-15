@@ -1,0 +1,11 @@
+DEPENDENCIES
+  rackspace_anz_dd15demo
+    path: .
+    metadata: true
+
+GRAPH
+  apache2 (3.1.0)
+  apt (2.7.0)
+  rackspace_anz_dd15demo (0.1.0)
+    apache2 (>= 0.0.0)
+    apt (>= 0.0.0)

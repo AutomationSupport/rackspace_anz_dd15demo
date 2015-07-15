@@ -1,0 +1,23 @@
+{
+  "chef_environment": "devel",
+  "json_class": "Chef::Node",
+  "automatic": {
+    "hostname": "vagrant.vm",
+    "os": "centos",
+    "recipes": [
+      "rackspace_anz_dd15demo",
+      "rackspace_anz_dd15demo::users"
+    ],
+    "roles": [
+    ],
+    "tags": [
+      "default"
+    ],
+    "ipaddress": "10.0.0.100"
+  },
+  "chef_type": "node",
+  "default": {
+  },
+  "override": {
+  }
+}

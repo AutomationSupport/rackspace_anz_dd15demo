@@ -43,7 +43,12 @@ platforms:
     - recipe[apt]
 
 suites:
- - name: default
-   run_list:
-     - recipe[rackspace_anz_dd15demo::default]
-   attributes:
+  - name: default
+    run_list:
+      - recipe[rackspace_anz_dd15demo::default]
+    attributes:
+
+  - name: webserver
+    run_list:
+      - recipe[rackspace_anz_dd15demo::webserver]
+    attributes:
