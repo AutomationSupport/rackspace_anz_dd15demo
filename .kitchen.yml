@@ -1,0 +1,49 @@
+---
+driver:
+  name: vagrant
+  network:
+  - ["forwarded_port", {guest: 8080,   host: 80, auto_correct: true}]
+  - ["forwarded_port", {guest: 8443,   host: 443, auto_correct: true}]
+  customize:
+    memory: 2048
+
+provisioner:
+  name: chef_zero
+  environments_path: test/integration/environments
+  require_chef_omnibus: true
+  attributes:
+    magentostack:
+      web:
+        http_port: '80'
+        https_port: '443'
+        domain: 'dd15demo.anz.rax.io'
+        server_aliases: 'dd15demo.anz.rax.io'
+      config:
+        secure_base_url: 'https://dd15demo.anz.rax.io/'
+        unsecure_base_url: 'http://dd15demo.anz.rax.io/'
+        # secure_base_url: 'https://119.9.13.252/'
+        # unsecure_base_url: 'http://119.9.13.252/'
+    authorization:
+      sudo:
+        users: ['vagrant']
+        passwordless: true
+    mysql:
+      server_root_password: "randompass"
+      server_repl_password: "randompass"
+      server_debian_password: "randompass"
+    holland:
+      password: "randompass"
+
+platforms:
+  # - name: centos-6.6
+  #   run_list:
+  #   - recipe[yum]
+  - name: ubuntu-14.04
+    run_list:
+    - recipe[apt]
+
+suites:
+ - name: default
+   run_list:
+     - recipe[rackspace_anz_dd15demo::default]
+   attributes:
